@@ -20,15 +20,10 @@ src/
     └---authex/ 
         |--- models/ 
         |   |--- info.ts               
-
         |   |---user.ts                
-
         |----index.ts                  
-
         |─-- service.ts                 
 
- 
- 
  
  
  
