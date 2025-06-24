@@ -1,4 +1,4 @@
-medusa-2fa
+## medusa-2fa
 
 A customizable Two-Factor Authentication (2FA) plugin for Medusa.js v2.8+, powered by TOTP with QR code support.
 
