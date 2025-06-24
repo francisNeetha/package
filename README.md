@@ -5,9 +5,9 @@ A customizable Two-Factor Authentication (2FA) plugin for Medusa.js v2.8+, power
 This plugin simplifies the integration of QR code-based multi-factor authentication (MFA) into your Medusa project using speakeasy and qrcode. It securely handles secrets in the session, verifies one-time passcodes, and scaffolds an authex module structure automatically via a post-install script.
 
 ## Installation
-
-npm install medusa-2fa@1.0.2
-
+```bash
+npm install medusa-2fa
+```
 Upon installation, a postinstall script will automatically generate the following folder structure:
 ```bash
 src/ |---─ api/
@@ -32,10 +32,11 @@ export default { modules:
 ```
 ## Run Migrations
 After scaffolding is complete, run the following commands to generate and apply your database schema:
-
+```bash
 npx medusa db:generate authex 
-npx medusa db:migrate
 
+npx medusa db:migrate
+```
 ## Usage
 
 ## Generate MFA QR Code
