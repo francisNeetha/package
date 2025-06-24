@@ -1,0 +1,41 @@
+{
+  "name": "medusa-2fa",
+  "version": "1.0.3",
+  "description": "Creates a custom folder in Medusa src/modules",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js",
+    "build": "tsc"
+  },
+  "files": [
+    "index.js",
+    "scripts/postinstall.js",
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "medusa",
+    "2fa",
+    "two-factor authentication"
+    
+  ],
+  "author": "Neetha Francis",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/francisNeetha/package.git"
+  },
+  "devDependencies": {
+    "@types/express-session": "^1.18.2",
+    "@types/node": "^24.0.3",
+    "@types/qrcode": "^1.5.5",
+    "@types/speakeasy": "^2.0.10",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@medusajs/medusa": "^2.8.4",
+    "qrcode": "^1.5.4",
+    "speakeasy": "^2.0.0"
+  }
+}
