@@ -43,7 +43,9 @@ npx medusa db:migrate
 ```bash
 /src/api/admin/generate-qr/route.ts
 
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http" import { handleMfaSetup } from "medusa-2fa" import AuthexModuleService from "../../../modules/authex/service"
+import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http" 
+import { handleMfaSetup } from "medusa-2fa" 
+import AuthexModuleService from "../../../modules/authex/service"
 
 export const GET = async (req: MedusaRequest, res: MedusaResponse) => { const authexService = req.scope.resolve("authexModuleService") as AuthexModuleService await handleMfaSetup(req, res, authexService, "Your-App-Name") }
 ```
@@ -59,33 +61,47 @@ Returns a QR code as a Data URL to be scanned by an authenticator app
 ```bash
 /src/api/admin/verify-mfa/route.ts
 
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http" import { handleMfaVerification } from "medusa-2fa" import AuthexModuleService from "../../../modules/authex/service"
+import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http" 
+import { handleMfaVerification } from "medusa-2fa"
+ import AuthexModuleService from "../../../modules/authex/service"
 
-export const POST = async (req: MedusaRequest, res: MedusaResponse) => { const authexService = req.scope.resolve("authexModuleService") as AuthexModuleService await handleMfaVerification(req, res, authexService) }
+export const POST = async (req: MedusaRequest, res: MedusaResponse) => { const 
+authexService = req.scope.resolve("authexModuleService") as AuthexModuleService await handleMfaVerification(req, res, authexService) }
 ```
 This route:
 
 Verifies the 6-digit passcode sent by the user
+
 If valid, saves the TOTP secret in your DB
+
 Cleans up the session and grants access
 
 ## Features
 
 TOTP (Google Authenticator-style) 2FA
+
 Automatic module scaffolding
+
 Session-based secret storage
+
 Optional middleware protection
+
 Built on MedusaJS v2 module system
 
 ## Requirements
 
 Node.js v18+
+
 MedusaJS v2.8+
+
 PostgreSQL (recommended)
 
 ## Built With
 
 MedusaJS
+
 Speakeasy
+
 QRCode
+
 Express session for secure server-side secret handling
